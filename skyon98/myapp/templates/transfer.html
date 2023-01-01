@@ -1,0 +1,62 @@
+<style>
+    form {
+        text-align: center;
+
+        left: 70%;
+
+    }
+</style>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    #money {
+        text-align: center;
+        position: center;
+    }
+
+    #money .input {
+        marign: 10px;
+    }
+
+    #d1 {
+        position: relative;
+        transform: translate(-50%, -5%);
+        left: 50%;
+        width: 300px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    #d2 {
+        position: relative;
+        transform: translate(-50%, -5%);
+        left: 50%;
+        width: 300px;
+        text-align: center;
+        margin: 10px;
+    }
+
+    #id {
+        position: center;
+    }
+</style>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% extends "dashboard.html"%}
+{%block title%}Transfer Money{%endblock title%}
+{% block flex %}
+
+<div id="money">
+    <form action="updatetransfermoney" method="get">
+        <h3>Enter the Account Number of Transferee: <input id="d1" type="text" name="taccno" text-align:center></h3>
+        <h3>Enter the money: <input id="d2" type="text" name="money" placeholer="Enter the money"></h3>
+        <button id="sub" type="submit" class="btn btn-primary" placeholder="Enter the money"
+            text-align:center>Confirm</button></a>
+
+    </form>
+</div>
+
+{% endblock flex %}

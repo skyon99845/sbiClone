@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Password</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'newuser/fonts/material-icon/css/material-design-iconic-font.min.css'%}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'newuser/css/style.css'%}">
+</head>
+
+<body>
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags %}
+    <script>alert("{{ message }}")</script> {% endif %}
+
+    {% endfor %}
+
+    {% endif %}
+    <div class="main">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form" action="/updatepassword">
+                        <h2 class="form-title">Update Password</h2>
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-input" name="username" id="name"
+                                placeholder="Enter the username" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="opassword" id="password"
+                                placeholder="Enter the old password" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-input" name="npassword" id="password"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter the new password"
+                                required
+                                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" name="Update Password" id="submit" class="form-submit"
+                                value="Update Password" />
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>

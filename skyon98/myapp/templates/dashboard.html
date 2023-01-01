@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% block foundation %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet'
+    type='text/css'>
+  {% endblock foundation %}
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>
+    {%block title%}Dashboard{%endblock title%}
+  </title>
+  <style>
+    * {}
+
+    #main {
+      text-align: center
+    }
+
+    .bal {
+      text-align: center;
+    }
+
+    #ulogout {
+      position: {
+        right: 10;
+      }
+
+    }
+
+    .contain {
+      color: red;
+      background-color: #E64545;
+    }
+  </style>
+</head>
+
+{% if messages %}
+{% for message in messages %}
+{% if message.tags %}
+<script>alert("{{ message }}")</script> {% endif %}
+
+{% endfor %}
+
+{% endif %}
+
+
+<body>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link " href="userlogout" style="color:red;">logout</a>
+    </li>
+  </ul>
+
+
+  <div class="contain">
+    <div class="jumbotron jumbotron-fluid" style="background-color:#00F3FF">
+      <div class="container">
+        <h1 class="display-4"><b>Welcome {{name}}</b></h1>
+        <p class="lead">Your Desire. We Aspire</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bal">
+    <h6>Account Number : {{accno}}</h6>
+  </div>
+  <div class="bal">
+    <h6>Account Balance : {{bal}}</h6>
+  </div>
+  {% block flex%}
+  <div class="bal">
+    <h6>Account Permanent Number: {{pernumber}}</h6>
+  </div>
+  <div class="bal">
+    <h6> Operator: {{operator}}</h6>
+  </div>
+  <div class="bal">
+    <h6> Email Id is: {{email}}</h6>
+  </div>
+  <div class="bal">
+    <h6> Contact Number: +91-{{mobile}}</h6>
+  </div>
+  <br>
+  <br>
+  </div>
+
+  <!-- Adding the Flex-->
+
+  <div class="tabs-panel is-active">
+    <div class="grid-x grid-margin-x medium-up-3 large-up-5">
+      <div class="cell" style="background-color:rgb(255, 255, 255);text-align: center;">
+
+        <h5><a href="updatepasswordform" class="button hollow tiny expanded">Update password</a></h5>
+        <p>To keep your account safe. Change the password after one month</p>
+
+      </div>
+      <div class="cell" style="background-color:rgb(255, 255, 255);text-align: center;">
+
+        <h5><a href="addmoney" class="button hollow tiny expanded">Add Money</a></h5>
+        <p>As per our policy, please maintain the minimum balance as per the account.</p>
+
+      </div>
+      <div class="cell" style="background-color:rgb(255, 255, 255);text-align: center;">
+
+        <h5><a href="withdrawmoney" class="button hollow tiny expanded">Withdraw Money</a></h5>
+        <p>Please don't share the pin or password related to account any body.</p>
+
+      </div>
+      <div class="cell" style="background-color:rgb(255, 255, 255);text-align: center;">
+
+        <h5><a href="generateotp" class="button hollow tiny expanded">Transfer Money</a></h5>
+        <p>We have the safest and efficient money transfer system.</p>
+
+      </div>
+      <div class="cell" style="background-color:rgb(255, 255, 255);text-align: center;">
+
+        <h5><a href="complaint" class="button hollow tiny expanded">Complaint/Feedback</a></h5>
+        <p>We care our customer.Please feel free to lodge complaint or give feedback.</p>
+
+      </div>
+    </div>
+
+  </div>
+  <footer style="height:30px;color: rgb(252, 252, 253);background-color:rgb(73, 16, 179);text-align:center"> Copyright
+    &#169 2021 by Shubham Kumar</footer>
+  {% endblock flex %}
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

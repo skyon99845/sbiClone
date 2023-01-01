@@ -1,0 +1,44 @@
+<style>
+    form {
+        text-align: center;
+    }
+</style>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    #money {
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -5%);
+    }
+
+    #money .input {}
+
+    #d1 {
+        text-align: center;
+    }
+
+    #id {
+        position: center;
+    }
+</style>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% extends "dashboard.html"%}
+{%block title%} Tansfer Money {%endblock title%}
+{% block flex %}
+
+<div id="money">
+    <form action="verify_otp" method="POST">
+        {% csrf_token %}
+        <h1>OTP Generated is : {{otpsend}}</h1>
+        <h3>Enter the Processed OTP<input id="d1" type="text" name="enteredotp"></h3>
+        <input type="submit" class="btn btn-primary active" role="button" data-bs-toggle="button"></a>
+    </form>
+</div>
+
+{% endblock flex %}

@@ -1,0 +1,55 @@
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+    #money {
+        text-align: center;
+        position: center;
+    }
+
+    #money .input {
+        width: 100px;
+        length: 50px;
+        text-align: center;
+    }
+
+    #sub {
+        position: relative;
+        top: 50px;
+        text-align: center;
+
+
+    }
+
+    #d1 {
+        position: absolute;
+        transform: translate(-50%, -5%);
+        left: 50%;
+        width: 300px;
+        text-align: center;
+    }
+</style>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+{% extends "dashboard.html"%}
+{%block title%} Add Money {%endblock title%}
+{% block flex %}
+{% if messages %}
+{% for message in messages %}
+{% if message.tags %}
+<script>alert("{{ message }}")</script> {% endif %}
+
+{% endfor %}
+
+{% endif %}
+<div id="money">
+    <form action="updateaddmoney" method="get">
+        <h3>Enter the money: <input id="d1" type="number" name="amount" placeholder="Enter the amount" required></h3>
+        <input id="sub" type="submit" class="btn btn-primary active" role="button" data-bs-toggle="button"
+            value="Add Money"></a>
+    </form>
+</div>
+
+{% endblock flex %}

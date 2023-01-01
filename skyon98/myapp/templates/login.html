@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Login{% endblock %}</title>
+    
+    <style>
+        {% block style%}
+        body{
+            background-color: rgb(0, 217, 255);
+        }
+        form{
+            background-color: darkblue;
+            text-align: center;
+            padding: 10%;
+        }
+        #base{
+            padding: 2%;
+            border-color: yellow;
+            
+        }
+        {% endblock %}
+    </style>
+    
+</head>
+<body>
+    <form action="/logincheck" method="POST">
+    <h1>{% block heading %} Login {% endblock %}</h1>
+    <div id="base">
+        {% csrf_token %}
+    <h3>Username= <input type="text" name="username"placeholder="Username"></h3>
+    <h3>Password=<input type="password" name="password"placeholder="password"></h3>
+    
+        <button type="submit" value="Submit">Submit</button>
+    </div>
+    </form>
+
+
+</body>
+</html>
