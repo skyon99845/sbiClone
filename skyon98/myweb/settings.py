@@ -25,9 +25,10 @@ SECRET_KEY = '&s2s_-9gt6-t=op4l9vp8pt5xbn%e_c3#$e*4!gri6mhbgig_2'
 # SECURITY WARNING: don't run with debug turned on in production!
 # Put debug = True When your working offline to detect the fault
 #DEBUG = True
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['127.0.0.1']
 #ALLOWED_HOSTS = ['skyon98.herokuapp.com', '127.0.0.1']
 #ALLOWED_HOSTS = ['shubhbank.herokuapp.com', 'localhost']
 #ALLOWED_HOSTS = ['skyon98.herokuapp.com']
